@@ -151,19 +151,19 @@
 							
 								ds.data.seconds -= ds.data.decreament;
 								
-								if(ds.data.seconds <= 0 && (ds.data.minutes > 0 || ds.data.hours > 0 || ds.data.days > 0)){	
+								if(ds.data.seconds < 0 && (ds.data.minutes > 0 || ds.data.hours > 0 || ds.data.days > 0)){	
 									ds.data.minutes --;
-									ds.data.seconds = 60;
+									ds.data.seconds = 59;
 								}
 								
-								if(ds.data.minutes <= 0 && (ds.data.hours > 0 || ds.data.days > 0)){
+								if(ds.data.minutes < 0 && (ds.data.hours > 0 || ds.data.days > 0)){
 									ds.data.hours --;
-									ds.data.minutes = 60;
+									ds.data.minutes = 59;
 								}
 								
-								if(ds.data.hours <= 0 && ds.data.days > 0){
+								if(ds.data.hours < 0 && ds.data.days > 0){
 									ds.data.days --;
-									ds.data.hours = 24;
+									ds.data.hours = 23;
 								}
 								
 								if(ds.data.elemDays)
